@@ -2,11 +2,10 @@ const path = require("path")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const webpack = require("webpack")
 
-const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 module.exports = {
   entry: {
-    "admin-ui": [path.join(__dirname, "./scss/index.js"), hotMiddlewareScript]
+    "admin-ui": [path.join(__dirname, "./scss/index.js")]
   },
   output: {
     path: path.join(__dirname, "./dist"),
@@ -33,9 +32,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({filename: "[name].css"}),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new ExtractTextPlugin({filename: "[name].css"})
   ]
 }
