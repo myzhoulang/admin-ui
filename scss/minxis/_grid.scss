@@ -1,0 +1,84 @@
+// container-fixed
+@import "../utilities/_clearfix.scss";
+@mixin container-fixed($gutter: $grid-gutter-width) {
+    margin-right: auto;
+    margin-left: auto; // 一个向上  一个向下解决奇数问题     
+    padding-left: floor(($gutter / 2));
+    padding-right: ceil(($gutter / 2));
+    @extend .clearfix;
+}
+
+// row
+@mixin make-row($gutter: $grid-gutter-width) {
+    margin-left: ceil($grid-gutter-width / -2);
+    margin-right: floor($grid-gutter-width / -2);
+    @extend .clearfix;
+}
+
+@mixin make-grid-columns($list:'') {
+    @for $i from 1 through $grid-columns {
+        $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i},.col-lg-#{$i}";
+    }
+    #{$list} {
+        position: relative;
+        min-height: 1px;
+        padding-left: ceil($grid-gutter-width / 2);
+        padding-right: floor($grid-gutter-width / 2);
+    }
+}
+
+// 根据class 和 列数 计算每种class每列的样式
+@mixin loop-grid-columns($class, $type) {
+    @for $i from 0 through $grid-columns {
+        @include calc-grid-columns($i, $class, $type)
+    }
+}
+
+// 根据类型（push, pull, offset）来生成对应的样式
+@mixin calc-grid-columns($index, $class, $type) {
+    @if ($type==width) and ($index > 0) {
+        .col-#{$class}-#{$index} {
+            width: percentage($index/$grid-columns);
+        }
+    }
+    @if ($type==push) and ($index==0) {
+        .col-#{$class}-#{$type}-#{$index} {
+            left: auto;
+        }
+    }
+    @if ($type==push) and ($index > 0) {
+        .col-#{$class}-#{$type}-#{$index} {
+            left: percentage($index / $grid-columns);
+        }
+    }
+    @if ($type==pull) and ($index==0) {
+        .col-#{$class}-#{$type}-#{$index} {
+            right: auto;
+        }
+    }
+    @if ($type==pull) and ($index > 0) {
+        .col-#{$class}-#{$type}-#{$index} {
+            right: percentage($index / $grid-columns);
+        }
+    }
+    @if ($type==offset) {
+        .col-#{$class}-#{$type}-#{$index} {
+            margin-left: percentage($index / $grid-columns);
+        }
+    }
+}
+
+// 生成每一列样式的minxin (处理每种media 宽度偏移)
+@mixin make-grid($class, $list: "") {
+    // for 循环拼接某一种媒体查询的列
+    @for $i from 1 through $grid-columns {
+        $list: "#{$list}, .col-#{$class}-#{$i}";
+    }
+    #{$list} {
+        float: left;
+    }
+    @include loop-grid-columns($class, "width");
+    @include loop-grid-columns($class, "push");
+    @include loop-grid-columns($class, "pull");
+    @include loop-grid-columns($class, "offset");
+}

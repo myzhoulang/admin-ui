@@ -1,0 +1,41 @@
+@import "_theme";
+@import "./minxis/_grid";
+.container {
+    @include container-fixed;
+    @media(min-width: $screen-sm-min) {
+        width: $container-sm;
+    }
+    @media(min-width: $screen-md-min) {
+        width: $container-md;
+    }
+    @media(min-width: $screen-lg-min) {
+        width: $container-lg;
+    }
+}
+
+.container-fluid {
+    @include container-fixed;
+}
+
+.row {
+    @include make-row;
+}
+
+// 基础的列样式
+@include make-grid-columns;
+// 默认生成xs的列样式
+@include make-grid(xs);
+// 生成sm的列样式
+@media(min-width:$container-sm) {
+    @include make-grid(sm);
+}
+
+// 生成md的列样式
+@media(min-width:$container-md) {
+    @include make-grid(md);
+}
+
+// 生成lg的列样式
+@media(min-width:$container-lg) {
+    @include make-grid(lg);
+}
