@@ -3,7 +3,15 @@ block content
   h1= title
   p Welcome to #{title}
   
-  .container
+  .container.demo-layout
     .row
-      .col-md-6 xxxxccccccccddd
-      .col-md-18 yyyyffffddd
+      .col-sm-6
+        .grid-content.bg-success .col-6
+      .col-sm-18
+        .grid-content.bg-success .col-18
+
+    .row
+      .col-sm-12
+        .grid-content.bg-primary .col-12
+      .col-sm-12
+        .grid-content.bg-primary .col-12
