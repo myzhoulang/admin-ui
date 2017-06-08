@@ -2,6 +2,11 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    if(env == "production")
+      link(rel="stylesheet" href="/stylesheets/admin-ui.style.css")
   body
     block content
+
+    script(src="/admin-ui.js")
+    script(src="/style.js")
+    script(src="/reload/reload.js")

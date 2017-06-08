@@ -17,7 +17,7 @@
 
 @mixin make-grid-columns($list:'') {
     @for $i from 1 through $grid-columns {
-        $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i},.col-lg-#{$i}";
+        $list: "#{$list}, .col-#{$i}, .col-sm-#{$i}, .col-md-#{$i},.col-lg-#{$i}";
     }
     #{$list} {
         position: relative;
@@ -29,53 +29,83 @@
 
 // 根据class 和 列数 计算每种class每列的样式
 @mixin loop-grid-columns($class, $type) {
-    @for $i from 0 through $grid-columns {
+    @for $i from 1 through $grid-columns {
         @include calc-grid-columns($i, $class, $type)
     }
 }
 
 // 根据类型（push, pull, offset）来生成对应的样式
 @mixin calc-grid-columns($index, $class, $type) {
-    @if ($type==width) and ($index > 0) {
-        .col-#{$class}-#{$index} {
-            width: percentage($index/$grid-columns);
+    @if($class !='') {
+        @if ($type==width) and ($index > 0) {
+            .col-#{$class}-#{$index} {
+                width: percentage($index/$grid-columns);
+            }
+        }
+        @if ($type==push) and ($index==0) {
+            .col-#{$class}-#{$type}-#{$index} {
+                left: auto;
+            }
+        }
+        @if ($type==push) and ($index > 0) {
+            .col-#{$class}-#{$type}-#{$index} {
+                left: percentage($index / $grid-columns);
+            }
+        }
+        @if ($type==pull) and ($index==0) {
+            .col-#{$class}-#{$type}-#{$index} {
+                right: auto;
+            }
+        }
+        @if ($type==pull) and ($index > 0) {
+            .col-#{$class}-#{$type}-#{$index} {
+                right: percentage($index / $grid-columns);
+            }
+        }
+        @if ($type==offset) {
+            .col-#{$class}-#{$type}-#{$index} {
+                margin-left: percentage($index / $grid-columns);
+            }
         }
     }
-    @if ($type==push) and ($index==0) {
-        .col-#{$class}-#{$type}-#{$index} {
-            left: auto;
+    @else {
+        @if($type==width) {
+            .col-#{$index} {
+                width: percentage($index/$grid-columns);
+            }
         }
-    }
-    @if ($type==push) and ($index > 0) {
-        .col-#{$class}-#{$type}-#{$index} {
-            left: percentage($index / $grid-columns);
+        @if($type==push) {
+            .col-#{$type}-#{$index} {
+                left: percentage($index / $grid-columns);
+            }
         }
-    }
-    @if ($type==pull) and ($index==0) {
-        .col-#{$class}-#{$type}-#{$index} {
-            right: auto;
+        @if($type==pull) {
+            .col-#{$type}-#{$index} {
+                right: percentage($index / $grid-columns);
+            }
         }
-    }
-    @if ($type==pull) and ($index > 0) {
-        .col-#{$class}-#{$type}-#{$index} {
-            right: percentage($index / $grid-columns);
-        }
-    }
-    @if ($type==offset) {
-        .col-#{$class}-#{$type}-#{$index} {
-            margin-left: percentage($index / $grid-columns);
+        @if($type==offset) {
+            .col-#{$type}-#{$index} {
+                margin-left: percentage($index / $grid-columns);
+            }
         }
     }
 }
 
 // 生成每一列样式的minxin (处理每种media 宽度偏移)
-@mixin make-grid($class, $list: "") {
+@mixin make-grid($class:"", $list: "") {
     // for 循环拼接某一种媒体查询的列
     @for $i from 1 through $grid-columns {
-        $list: "#{$list}, .col-#{$class}-#{$i}";
+        @if ($class !='') {
+            $list: "#{$list}, .col-#{$class}-#{$i}";
+        }
+        @else {
+            $list: "#{$list}, .col-#{$i}";
+        }
     }
     #{$list} {
         float: left;
+        box-sizing: border-box;
     }
     @include loop-grid-columns($class, "width");
     @include loop-grid-columns($class, "push");

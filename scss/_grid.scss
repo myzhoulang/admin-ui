@@ -24,7 +24,7 @@
 // 基础的列样式
 @include make-grid-columns;
 // 默认生成xs的列样式
-@include make-grid(xs);
+@include make-grid();
 // 生成sm的列样式
 @media(min-width:$container-sm) {
     @include make-grid(sm);

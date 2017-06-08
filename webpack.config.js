@@ -1,6 +1,7 @@
 const path = require("path")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const webpack = require("webpack")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
@@ -34,8 +35,9 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({filename: "[name].css"}),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    // new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
+    // new webpack.NoErrorsPlugin(),
+
   ]
 }
