@@ -2,6 +2,11 @@
   border: 1px solid $border;
   background-color: $background-color;
   color: $color;
+
+  &:hover {
+    background-color: lighten($background-color, 7%);
+    border-color: lighten($border, 7%);
+  }
 }
 @mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border-radius:0) {
   padding: $padding-vertical $padding-horizontal;
