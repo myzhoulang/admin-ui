@@ -1,16 +1,27 @@
-body{
+body {}
 
+.demo-layout {
+  .grid-content {
+    padding: 16px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #1c84c6;
+  }
+
+  .row,
+  .row-normal {
+    margin-bottom: 20px;
+
+    [class]:nth-child(odd) {
+      .grid-content {
+        background-color: lighten(#1c84c6, 10%);
+      }
+    }
+  }
 }
-.demo-layout .grid-content {
-  // min-height: 36px;
-  line-height: 36px;
-  text-align: center;
-  color: #fff;
-  border-radius: 4px;
-}
-.demo-layout .row{
-  margin-bottom:20px;
-}
-.demo-layout .bg-primary{
-  background: #1c84c6;
+
+.demo-box{
+  .btn-group{
+    margin-bottom: 20px;
+  }
 }

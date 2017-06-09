@@ -23,6 +23,10 @@ module.exports = {
           'css-loader?sourceMap',
           'resolve-url-loader',
           'sass-loader?sourceMap']
+      },
+      {
+        test: /\.(gif|jpe?g|png|woff|svg|eot|ttf|pdf)\??.*$/,
+        use: "file-loader?name = [path][name].[ext]"
       }
     ]
   },

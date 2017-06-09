@@ -1,0 +1,82 @@
+extends ../layout
+block content
+
+  .container
+    h2 Button 按钮
+    p 常用的操作按钮。
+
+  .container
+    h3 基础用法
+    p 基础的按钮用法。
+    .demo-box
+      button.btn 默认按钮
+      button.btn.btn-primary 主要按钮
+      button.btn.btn-success 成功按钮
+      button.btn.btn-info 信息按钮
+      button.btn.btn-warning 警告按钮
+      button.btn.btn-danger 错误按钮
+
+    h3 禁用状态
+    p 按钮不可用状态
+    .demo-box
+      .button.btn(disabled) 主要按钮
+
+    h3 鼠标移入显示的线框按钮
+    p 线框的按钮用法。hover 显示带颜色的线框按钮
+    .demo-box
+      button.btn.btn-line-primary 主要按钮
+      button.btn.btn-line-success 成功按钮
+      button.btn.btn-line-info 信息按钮
+      button.btn.btn-line-warning 警告按钮
+      button.btn.btn-line-danger 错误按钮
+
+    h3 icon 按钮
+    p icon 按钮用法
+    .demo-box
+      button.btn
+        i.fa.fa-wrench
+
+      button.btn
+        i.fa.fa-exchange
+
+      button.btn
+        i.fa.fa-ambulance
+
+      button.btn
+        i.fa.fa-star.icon-left
+        | Stared
+
+      button.btn.btn-primary
+        | upload
+        i.fa.fa-cloud-upload.fa-lg.icon-right
+
+      button.btn.btn-primary.btn-loading
+        i.fa.fa-spinner.fa-spin.icon-left.fa-lg
+        | 加载中
+
+    h3 不同尺寸的按钮
+    p button 有以下不同尺寸的按钮
+    .demo-box
+      button.btn.btn-lg.btn-primary btn-lg
+      button.btn.btn-primary btn-base
+      button.btn.btn-sm.btn-primary btn-small
+      button.btn.btn-xs.btn-primary btn-xs
+
+    h3 按钮组
+    p 用于多项选择
+    .demo-box
+      .btn-group
+        button.btn.btn-primary
+          i.fa.fa-angle-left.fa-lg.icon-left
+          | 上一页
+        button.btn.btn-primary
+          | 下一页
+          i.fa.fa-angle-right.fa-lg.icon-right
+
+      .btn-group
+        button.btn.btn-primary
+          i.fa.fa-edit.fa-lg
+        button.btn.btn-primary
+          i.fa.fa-code-fork.fa-lg
+        button.btn.btn-primary
+          i.fa.fa-trash.fa-lg

@@ -5,7 +5,7 @@
 $gray-base: #000;
 
 // 深灰色
-$gray-darker: lighten($gray-base, 13.5%); 
+$gray-darker: lighten($gray-base, 13.5%);
 $gray-dark: lighten($gray-base, 20%); // #333
 
 // 灰色 #888
@@ -56,6 +56,13 @@ $container-lg: 1140px + $grid-gutter-width;
 $font-family-cn: "PingFang SC Microsoft YaHei";
 $font-family-en: "Helvetica Neue Arial";
 $font-size-base: 14px;
+
+ // ~16px
+$font-size-large: ceil(($font-size-base * 1.142857));
+
+ // ~12px
+$font-size-small: ceil(($font-size-base * 0.85));
+
 // = 30px
 $font-size-h1: floor(($font-size-base * 2.15));
 
@@ -84,12 +91,14 @@ $line-height-small: 1.3333333;
 $line-height-computed: floor(($font-size-base * $line-height-base));
 
 // === padding
-$padding-base-vertical: 6px;
-$padding-base-horizontal: 12px;
-$padding-large-vertical: 10px;
-$padding-large-horizonta:16px;
-$padding-small-vertical:5px;
-$padding-small-horizonta: 10px;
+$padding-xs-vertical:4px;
+$padding-xs-horizontal: 4px;
 
+$padding-small-vertical: 7px;
+$padding-small-horizontal: 9px;
 
+$padding-base-vertical: 10px;
+$padding-base-horizontal: 15px;
 
+$padding-large-vertical: 12px;
+$padding-large-horizontal:20px;

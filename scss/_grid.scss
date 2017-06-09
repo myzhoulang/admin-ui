@@ -1,41 +1,53 @@
 @import "_theme";
 @import "./mixins/_grid";
+
 .container {
-    @include container-fixed;
-    @media(min-width: $screen-sm-min) {
-        width: $container-sm;
-    }
-    @media(min-width: $screen-md-min) {
-        width: $container-md;
-    }
-    @media(min-width: $screen-lg-min) {
-        width: $container-lg;
-    }
+  @include container-fixed;
+  @media(min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media(min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media(min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
 }
 
 .container-fluid {
-    @include container-fixed;
+  @include container-fixed;
 }
 
 .row {
-    @include make-row;
+  @include make-row;
 }
 
+// 没有margin-left 和 margin-right
+.row-normal{
+  @include make-row(normal);
+}
+// 生成 col-1, col-2 ....
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: percentage($i/$grid-columns);
+    float: left;
+    box-sizing: border-box;
+  }
+  .col-offset-#{$i} {
+    margin-left: percentage($i/$grid-columns);
+  }
+}
 // 基础的列样式
-@include make-grid-columns;
-// 默认生成xs的列样式
-@include make-grid(xs);
-// 生成sm的列样式
+@include make-grid-columns; // 默认生成xs的基础列样式
+@include make-grid(xs); // 生成sm的列样式
 @media(min-width:$container-sm) {
-    @include make-grid(sm);
+   @include make-grid(sm);
 }
-
 // 生成md的列样式
 @media(min-width:$container-md) {
-    @include make-grid(md);
+   @include make-grid(md);
 }
-
 // 生成lg的列样式
 @media(min-width:$container-lg) {
-    @include make-grid(lg);
+   @include make-grid(lg);
 }
