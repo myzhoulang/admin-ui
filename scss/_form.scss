@@ -1,0 +1,52 @@
+.#{$prefix}-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: 12px;
+
+  @at-root .#{$prefix}-input-icon{
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    text-align: center;
+    color: #e5e6e7;
+    transition: all .3s;
+    cursor: pointer;
+
+    &::after{
+      content: "";
+      height: 100%;
+      width: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    & + .#{$prefix}-input-inner{
+      padding-right: 30px;
+    }
+  }
+
+  @at-root .#{$prefix}-input-inner {
+    width: 100%;
+    border: 1px solid #e5e6e7;
+    line-height: 1;
+    height: 34px;
+    background-color: #fff;
+    background-image: none;
+    display: inline-block;
+    color: inherit;
+    box-sizing: border-box;
+    font-size: inherit;
+    outline: none;
+    padding: 6px 12px;
+
+    &:active,
+    &:focus {
+      border-color: $success;
+    }
+
+    @include placeholder(lighten($font-color-base, 45%));
+  }
+}

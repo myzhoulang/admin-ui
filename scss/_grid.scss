@@ -1,7 +1,7 @@
 @import "_theme";
 @import "./mixins/_grid";
 
-.container {
+.#{$prefix}-container {
   @include container-fixed;
   @media(min-width: $screen-sm-min) {
     width: $container-sm;
@@ -14,26 +14,26 @@
   }
 }
 
-.container-fluid {
+.#{$prefix}-container-fluid {
   @include container-fixed;
 }
 
-.row {
+.#{prefix}-row {
   @include make-row;
 }
 
 // 没有margin-left 和 margin-right
-.row-normal{
+.#{$prefix}-row-normal{
   @include make-row(normal);
 }
 // 生成 col-1, col-2 ....
 @for $i from 1 through $grid-columns {
-  .col-#{$i} {
+  .#{$prefix}-col-#{$i} {
     width: percentage($i/$grid-columns);
     float: left;
     box-sizing: border-box;
   }
-  .col-offset-#{$i} {
+  .#{$prefix}-col-offset-#{$i} {
     margin-left: percentage($i/$grid-columns);
   }
 }

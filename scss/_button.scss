@@ -1,4 +1,4 @@
-.btn {
+.#{$prefix}-btn {
   display: inline-block;
   margin-bottom: 0;
   text-align: center;
@@ -26,89 +26,89 @@
     opacity: .5;
   }
 
-  & + .btn {
+  & + .#{$prefix}-btn {
     margin-left: 10px;
   }
 }
 // === 线框的按钮
 
-.btn-line-primay {
+.#{$prefix}-btn-line-primay {
   @include btn-line($primary);
 }
 
-.btn-line-success {
+.#{$prefix}-btn-line-success {
   @include btn-line($success);
 }
 
-.btn-line-info {
+.#{$prefix}-btn-line-info {
   @include btn-line($info);
 }
 
-.btn-line-warning {
+.#{$prefix}-btn-line-warning {
   @include btn-line($warning);
 }
 
-.btn-line-danger {
+.#{$prefix}-btn-line-danger {
   @include btn-line($danger);
 }
 // === 各种主题样式
 
-.btn-primary {
+.#{$prefix}-btn-primary {
   @include btn-color(#fff, $primary, $primary);
 }
 
-.btn-success {
+.#{$prefix}-btn-success {
   @include btn-color(#fff, $success, $success);
 }
 
-.btn-info {
+.#{$prefix}-btn-info {
   @include btn-color(#fff, $info, $info);
 }
 
-.btn-warning {
+.#{$prefix}-btn-warning {
   @include btn-color(#fff, $warning, $warning);
 }
 
-.btn-danger {
+.#{$prefix}-btn-danger {
   @include btn-color(#fff, $danger, $danger);
 }
 // === button 各种大小
 
-.btn-lg {
+.#{$prefix}-btn-lg {
   @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, 0);
 }
 
-.btn-sm {
+.#{$prefix}-btn-sm {
   @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, 0);
 }
 
-.btn-xs {
+.#{$prefix}-btn-xs {
   @include btn-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, 0);
 }
 
-.btn-loading {
+.#{$prefix}-btn-loading {
   position: relative;
   pointer-events: none;
   opacity: 0.75;
   filter:alpha(opacity=75);
 }
 
-.btn-group {
+.#{$prefix}-btn-group {
 
-  > .btn {
+  > .#{$prefix}-btn {
     margin-left: 0;
-    & + .btn{
+    & + .#{$prefix}-btn{
       border-left: 1px solid #fff;
     }
   }
 }
 
 // 占满一行的按钮
-.btn-block{
+.#{$prefix}-btn-block{
   width: 100%;
   display: block;
   margin-top: 10px;
-  & + .btn-block {
+  & + .#{$prefix}-btn-block {
     margin-left: 0;
   }
 }

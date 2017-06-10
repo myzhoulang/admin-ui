@@ -1,92 +1,99 @@
 extends ../layout
 block content
 
-  .container
+  .adm-container
     h2 Button 按钮
     p 常用的操作按钮。
 
-  .container
+  .adm-container
     h3 基础用法
     p 基础的按钮用法。
     .demo-box
-      button.btn 默认按钮
-      button.btn.btn-primary 主要按钮
-      button.btn.btn-success 成功按钮
-      button.btn.btn-info 信息按钮
-      button.btn.btn-warning 警告按钮
-      button.btn.btn-danger 错误按钮
+      button.adm-btn 默认按钮
+      button.adm-btn.adm-btn-primary 主要按钮
+      button.adm-btn.adm-btn-success 成功按钮
+      button.adm-btn.adm-btn-info 信息按钮
+      button.adm-btn.adm-btn-warning 警告按钮
+      button.adm-btn.adm-btn-danger 错误按钮
 
     h3 禁用状态
     p 按钮不可用状态
     .demo-box
-      .button.btn(disabled) 主要按钮
+      .button.adm-btn(disabled) 主要按钮
 
     h3 鼠标移入显示的线框按钮
     p 线框的按钮用法。hover 显示带颜色的线框按钮
     .demo-box
-      button.btn.btn-line-primary 主要按钮
-      button.btn.btn-line-success 成功按钮
-      button.btn.btn-line-info 信息按钮
-      button.btn.btn-line-warning 警告按钮
-      button.btn.btn-line-danger 错误按钮
+      button.adm-btn.adm-btn-line-primary 主要按钮
+      button.adm-btn.adm-btn-line-success 成功按钮
+      button.adm-btn.adm-btn-line-info 信息按钮
+      button.adm-btn.adm-btn-line-warning 警告按钮
+      button.adm-btn.adm-btn-line-danger 错误按钮
 
     h3 icon 按钮
     p icon 按钮用法
     .demo-box
-      button.btn
+      button.adm-btn
         i.fa.fa-wrench
 
-      button.btn
+      button.adm-btn
         i.fa.fa-exchange
 
-      button.btn
+      button.adm-btn
         i.fa.fa-ambulance
 
-      button.btn
+      button.adm-btn
         i.fa.fa-star.icon-left
         | Stared
 
-      button.btn.btn-primary
+      button.adm-btn.adm-btn-primary
         | upload
         i.fa.fa-cloud-upload.fa-lg.icon-right
 
-      button.btn.btn-primary.btn-loading
+      button.adm-btn.adm-btn-primary.adm-btn-loading
         i.fa.fa-spinner.fa-spin.icon-left.fa-lg
         | 加载中
 
     h3 不同尺寸的按钮
     p button 有以下不同尺寸的按钮
     .demo-box
-      button.btn.btn-lg.btn-primary btn-lg
-      button.btn.btn-primary btn-base
-      button.btn.btn-sm.btn-primary btn-small
-      button.btn.btn-xs.btn-primary btn-xs
+      button.adm-btn.adm-btn-lg.adm-btn-primary btn-lg
+      button.adm-btn.adm-btn-primary btn-base
+      button.adm-btn.adm-btn-sm.adm-btn-primary btn-small
+      button.adm-btn.adm-btn-xs.adm-btn-primary btn-xs
 
     h3 按钮组
     p 用于多项选择
     .demo-box
-      .btn-group
-        button.btn.btn-primary
+      .adm-btn-group
+        button.adm-btn.adm-btn-primary
           i.fa.fa-angle-left.fa-lg.icon-left
           | 上一页
-        button.btn.btn-primary
+        button.adm-btn.adm-btn-primary
           | 下一页
           i.fa.fa-angle-right.fa-lg.icon-right
 
-      .btn-group
-        button.btn.btn-primary
+      .adm-btn-group
+        button.adm-btn.adm-btn-primary
           i.fa.fa-edit.fa-lg
-        button.btn.btn-primary
+        button.adm-btn.adm-btn-primary
           i.fa.fa-code-fork.fa-lg
-        button.btn.btn-primary
+        button.adm-btn.adm-btn-primary
           i.fa.fa-trash.fa-lg
 
     h3 块状按钮
     p 占满一行的按钮
     .demo-box
-      button.btn.btn-block btn-block
-      button.btn.btn-block.btn-primary btn-block btn-primary
-      button.btn.btn-block.btn-success btn-block btn-success
-      button.btn.btn-block.btn-info btn-block btn-info
-      button.btn.btn-block.btn-warning btn-block btn-warning
-      button.btn.btn-block.btn-danger btn-block btn-danger
+      button.adm-btn.adm-btn-block btn-block
+      button.adm-btn.adm-btn-block.adm-btn-primary btn-block btn-primary
+      button.adm-btn.adm-btn-block.adm-btn-success btn-block btn-success
+      button.adm-btn.adm-btn-block.adm-btn-info btn-block btn-info
+      button.adm-btn.adm-btn-block.adm-btn-warning btn-block btn-warning
+      button.adm-btn.adm-btn-block.adm-btn-danger btn-block btn-danger
+
+  .adm-container
+    .adm-row
+      .adm-col-12
+        .adm-input
+          i.fa.fa-pencil.fa-lg.adm-input-icon
+          input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
