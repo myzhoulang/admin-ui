@@ -1,0 +1,25 @@
+body{
+  color:$font-color-base;
+  box-sizing: border-box;
+  font-family: $font-family-cn;
+  font-size: $font-size-base;
+  background-color: $body-bg;
+  line-height: $line-height-base;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+input, button,select,optgroup,textarea{
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

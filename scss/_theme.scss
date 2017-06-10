@@ -31,7 +31,7 @@ $danger: #ed5565;
 
 
 // body 背景色
-$body: #fff;
+$body-bg: #fff;
 
 // 默认文本色
 $text-color: $gray-dark;
@@ -56,6 +56,7 @@ $container-lg: 1140px + $grid-gutter-width;
 $font-family-cn: "PingFang SC Microsoft YaHei";
 $font-family-en: "Helvetica Neue Arial";
 $font-size-base: 14px;
+$font-color-base: #676a6c;
 
  // ~16px
 $font-size-large: ceil(($font-size-base * 1.142857));
