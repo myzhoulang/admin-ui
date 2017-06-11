@@ -18,27 +18,34 @@
   @include container-fixed;
 }
 
-.#{prefix}-row {
-  @include make-row;
+.#{$prefix}-row {
+  @include make-row();
+  @include make-grid-columns(); // 默认生成xs的基础列样式
 }
 
 // 没有margin-left 和 margin-right
 .#{$prefix}-row-normal{
+
   @include make-row(normal);
+
+  @include make-grid-columns(normal);
 }
 // 生成 col-1, col-2 ....
-@for $i from 1 through $grid-columns {
-  .#{$prefix}-col-#{$i} {
-    width: percentage($i/$grid-columns);
-    float: left;
-    box-sizing: border-box;
-  }
-  .#{$prefix}-col-offset-#{$i} {
-    margin-left: percentage($i/$grid-columns);
-  }
-}
-// 基础的列样式
-@include make-grid-columns; // 默认生成xs的基础列样式
+// @for $i from 1 through $grid-columns {
+//   .#{$prefix}-col-#{$i} {
+//     width: percentage($i/$grid-columns);
+//     float: left;
+//     box-sizing: border-box;
+//     padding-left: ceil($grid-gutter-width / 2);
+//     padding-right: floor($grid-gutter-width / 2);
+//   }
+//   .#{$prefix}-col-offset-#{$i} {
+//     margin-left: percentage($i/$grid-columns);
+//   }
+// }
+// // 基础的列样式
+// @include make-grid-columns; // 默认生成xs的基础列样式
+
 @include make-grid(xs); // 生成sm的列样式
 @media(min-width:$container-sm) {
    @include make-grid(sm);

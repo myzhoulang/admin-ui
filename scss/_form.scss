@@ -30,9 +30,15 @@
 
   @at-root .#{$prefix}-input-inner {
     width: 100%;
-    border: 1px solid #e5e6e7;
+
+    border: {
+      width: 1px;
+      style: solid;
+      color: $border-color;
+    }
+
     line-height: 1;
-    height: 34px;
+    height: 36px;
     background-color: #fff;
     background-image: none;
     display: inline-block;
@@ -44,9 +50,69 @@
 
     &:active,
     &:focus {
-      border-color: $success;
+      border-color: $border-focus-color;
     }
 
-    @include placeholder(lighten($font-color-base, 45%));
+    @include placeholder(lighten($font-color-base, 40%));
+
+    &.#{$prefix}-input-inner-lg{
+      height: 42px;;
+    }
+
+    &.#{$prefix}-input-inner-sm{
+      height: 28px;;
+    }
+
+    &.#{$prefix}-input-inner-xs{
+      height: 22px;;
+    }
+  }
+}
+
+.#{$prefix}-textarea{
+  @extend .#{$prefix}-input;
+
+  @at-root .#{$prefix}-textarea-inner{
+    @extend .#{$prefix}-input-inner;
+    height: auto;
+    line-height: $line-height-base;
+  }
+}
+
+.#{$prefix}-input-group{
+  display: inline-table;
+
+  > .#{$prefix}-input{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  > .#{$prefix}-input-addon {
+    display: table-cell;
+    padding: 0 10px;
+    min-width: 1px;
+    white-space: nowrap;
+    vertical-align: middle;
+    color: lighten($font-color-base, 15%);
+
+    border: {
+      width: 1px;
+      style: solid;
+      color: $border-color;
+    }
+    height: 100%;
+
+    &:first-child{
+      border-right: none;
+    }
+
+    &:last-child{
+      border-left: none;
+    }
+  }
+
+  > .#{$prefix}-btn {
+    display: table-cell;
+    vertical-align: middle;
   }
 }
