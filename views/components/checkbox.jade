@@ -40,13 +40,39 @@ block content
             span.adm-radio-inner
             | 打篮球
 
-    h3 带icon的输入框
-    .adm-row
-      .adm-col-12
-        .adm-input
-          i.fa.fa-pencil.fa-lg.adm-input-icon
-          input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
+      h3 基础用法
+      .adm-row
+        .adm-col-12
+          label.adm-checkbox
+            input(type="checkbox",  disabled="disabled")
+            span.adm-checkbox-inner
+            | 上海
 
+          label.adm-checkbox
+            input(type="checkbox", checked="checked", disabled="disabled")
+            span.adm-checkbox-inner
+            | 北京
+          label.adm-checkbox
+            input(type="checkbox", name="a", disabled="disabled")
+            span.adm-checkbox-inner
+            | 杭州
+
+        .adm-row
+          .adm-col-12
+            label.adm-radio
+              input(type="radio", name="c", checked="checked", disabled="disabled")
+              span.adm-radio-inner
+              | 爬山
+
+            label.adm-radio
+              input(type="radio", name="c", disabled="disabled")
+              span.adm-radio-inner
+              | 看书
+
+            label.adm-radio
+              input(type="radio", name="c", disabled="disabled")
+              span.adm-radio-inner
+              | 打篮球
     h3 文本域
     .adm-row
       .adm-col-12
