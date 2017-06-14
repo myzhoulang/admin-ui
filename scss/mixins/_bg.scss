@@ -1,5 +1,5 @@
 @mixin bg($parent, $color) {
-    .bg-#{$parent} {
-        background: $color;
-    }
+  .bg-#{$parent} {
+    background: $color;
+  }
 }

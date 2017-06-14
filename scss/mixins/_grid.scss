@@ -16,15 +16,13 @@
   @extend .clearfix;
 }
 @mixin make-grid-columns($type:'') {
-  $list:'';
-   @for $i from 1 through $grid-columns{
+  $list: '';
+  @for $i from 1 through $grid-columns {
     $list: "#{$list}, .#{$prefix}-col-#{$i}, .#{$prefix}-col-sm-#{$i}, .#{$prefix}-col-md-#{$i},.#{$prefix}-col-lg-#{$i}";
   }
 
   #{$list} {
-    
-
-    @if($type == ''){
+    @if($type == '') {
       padding-left: ceil($grid-gutter-width / 2);
       padding-right: floor($grid-gutter-width / 2);
     }
@@ -39,32 +37,38 @@
 // 根据类型（push, pull, offset）来生成对应的样式
 @mixin calc-grid-columns($index, $class, $type) {
    @if ($type==width) and ($index > 0){
-    .#{$prefix}-col-#{$class}-#{$index},.#{$prefix}-col-#{$index} {
+    .#{$prefix}-col-#{$class}-#{$index},
+    .#{$prefix}-col-#{$index} {
       width: percentage($index/$grid-columns);
     }
   }
   @if ($type==push) and ($index==0) {
-    .#{$prefix}-col-#{$class}-#{$type}-#{$index},.#{$prefix}-col-#{$type}-#{$index} {
+    .#{$prefix}-col-#{$class}-#{$type}-#{$index},
+    .#{$prefix}-col-#{$type}-#{$index} {
       left: auto;
     }
   }
   @if ($type==push) and ($index > 0) {
-    .#{$prefix}-col-#{$class}-#{$type}-#{$index},.#{$prefix}-col-#{$type}-#{$index} {
+    .#{$prefix}-col-#{$class}-#{$type}-#{$index},
+    .#{$prefix}-col-#{$type}-#{$index} {
       left: percentage($index / $grid-columns);
     }
   }
   @if ($type==pull) and ($index==0) {
-    .#{$prefix}-col-#{$class}-#{$type}-#{$index},.#{$prefix}-col-#{$type}-#{$index} {
+    .#{$prefix}-col-#{$class}-#{$type}-#{$index},
+    .#{$prefix}-col-#{$type}-#{$index} {
       right: auto;
     }
   }
   @if ($type==pull) and ($index > 0) {
-    .#{$prefix}-col-#{$class}-#{$type}-#{$index},.#{$prefix}-col-#{$type}-#{$index} {
+    .#{$prefix}-col-#{$class}-#{$type}-#{$index},
+    .#{$prefix}-col-#{$type}-#{$index} {
       right: percentage($index / $grid-columns);
     }
   }
   @if ($type==offset) {
-    .#{$prefix}-col-#{$class}-#{$type}-#{$index} ,.#{$prefix}-col-#{$type}-#{$index}{
+    .#{$prefix}-col-#{$class}-#{$type}-#{$index},
+    .#{$prefix}-col-#{$type}-#{$index} {
       margin-left: percentage($index / $grid-columns);
     }
   }

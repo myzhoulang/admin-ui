@@ -22,12 +22,9 @@
   @include make-row();
   @include make-grid-columns(); // 默认生成xs的基础列样式
 }
-
 // 没有margin-left 和 margin-right
-.#{$prefix}-row-normal{
-
+.#{$prefix}-row-normal {
   @include make-row(normal);
-
   @include make-grid-columns(normal);
 }
 // 生成 col-1, col-2 ....
@@ -45,7 +42,6 @@
 // }
 // // 基础的列样式
 // @include make-grid-columns; // 默认生成xs的基础列样式
-
 @include make-grid(xs); // 生成sm的列样式
 @media(min-width:$container-sm) {
    @include make-grid(sm);
