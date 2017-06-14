@@ -1,0 +1,55 @@
+//
+@mixin input-check($type) {
+  .#{$prefix}-#{$type} {
+    position: relative;
+    font-weight: 500;
+    display: inline-block;
+
+    & + .#{$prefix}-#{$type} {
+      margin-left: 15px;
+    }
+
+    .#{$prefix}-#{$type}-inner {
+      @extend %input-inner;
+      @if($type == radio) {
+        border-radius: 100%;
+      }
+    }
+
+    input[type="#{$type}"] {
+      @extend %input-check;
+
+      &:checked ~ .#{$prefix}-#{$type}-inner {
+        background-color: $primary;
+        border-color: $primary;
+        @if ($type == checkbox) {
+          &:after {
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            width: 8px;
+            height: 4px;
+          }
+        }
+        @else {
+          &:after {
+            width: 5px;
+            height: 5px;
+            top: 6.5px;
+            left: 6.5px;
+            background-color: #fff;
+            border-radius: 100%;
+          }
+        }
+      }
+
+      &:disabled ~ .#{$prefix}-#{$type}-inner {
+        background-color: #eef1f6;
+        border-color: #d1dbe5;
+      }
+
+      &:disabled:checked ~ .#{$prefix}-#{$type}-inner {
+        background-color: #d1dbe5;
+      }
+    }
+  }
+}

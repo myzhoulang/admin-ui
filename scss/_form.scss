@@ -3,8 +3,7 @@
   display: inline-block;
   width: 100%;
   font-size: 12px;
-
-  @at-root .#{$prefix}-input-icon{
+  @at-root .#{$prefix}-input-icon {
     position: absolute;
     width: 30px;
     height: 100%;
@@ -12,10 +11,10 @@
     top: 0;
     text-align: center;
     color: #e5e6e7;
-    transition: all .3s;
+    transition: all 0.3s;
     cursor: pointer;
 
-    &::after{
+    &::after {
       content: "";
       height: 100%;
       width: 0;
@@ -23,11 +22,10 @@
       vertical-align: middle;
     }
 
-    & + .#{$prefix}-input-inner{
+    & + .#{$prefix}-input-inner {
       padding-right: 30px;
     }
   }
-
   @at-root .#{$prefix}-input-inner {
     width: 100%;
     border: 1px solid #e5e6e7;
@@ -46,12 +44,9 @@
     &:focus {
       border-color: $success;
     }
-
     @include placeholder(lighten($font-color-base, 45%));
   }
 }
-
-
 // checkbo, radio input-inner
 %input-inner {
   display: inline-block;
@@ -62,22 +57,19 @@
   border: 1px solid $border-color;
   margin-right: 5px;
 
-  &:after{
+  &:after {
     content: "";
     box-sizing: content-box;
     display: block;
-
     top: 4px;
     left: 5px;
     position: absolute;
-    transform:  rotate(-50deg);
+    transform: rotate(-50deg);
     transform-origin: center;
-
   }
 }
-
 // checkbox radio
-%input-check{
+%input-check {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -86,66 +78,6 @@
   opacity: 0;
 }
 
-// checkbox
-.#{$prefix}-checkbox{
-  & + .#{$prefix}-checkbox{
-    margin-left: 15px;
-  }
 
-  input[type="checkbox"]{
-    @extend %input-check;
-    &:checked ~ .#{$prefix}-checkbox-inner{
-      background-color: $primary;
-      border-color: $primary;
-    }
-  }
-
-  .#{$prefix}-checkbox-inner{
-    @extend %input-inner;
-
-    &:after{
-      border-left:2px solid #fff;
-      border-bottom:2px solid #fff;
-      width: 8px;
-      height: 4px;
-    }
-  }
-}
-
-// radio
-.#{$prefix}-radio{
-
-  & + .#{$prefix}-radio{
-    margin-left: 15px;
-  }
-
-  input[type="radio"]{
-    @extend %input-check;
-    &:checked ~ .#{$prefix}-radio-inner{
-      background-color: $primary;
-      border-color: $primary;
-    }
-  }
-
-  .#{$prefix}-radio-inner{
-    @extend %input-inner;
-
-    border-radius: 100%;
-
-    &:after{
-      width: 5px;
-      height: 5px;
-      top: 6.5px;
-      left: 6.5px;
-      background-color: #fff;
-      border-radius: 100%;
-    }
-  }
-}
-
-.#{$prefix}-checkbox, .#{$prefix}-radio{
-  position: relative;
-  font-weight: 500;
-  display: inline-block;
-
-}
+@include input-check(checkbox);
+@include input-check(radio);
