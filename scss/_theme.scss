@@ -16,6 +16,9 @@ $gray: lighten($gray-base, 50%);
 $gray-light: lighten($gray-base, 46.7%); // #777
 $gray-lighter: lighten($gray-base, 93.5%); // #eee
 
+// 暗淡柔和灰色
+$muted: #f6f8fa;
+
 // 主色调
 $primary: #1c84c6;
 
@@ -62,7 +65,7 @@ $container-lg: 1140px + $grid-gutter-width;
 $font-family-cn: "PingFang SC Microsoft YaHei";
 $font-family-en: "Helvetica Neue Arial";
 $font-size-base: 14px;
-$font-color-base: #676a6c;
+$font-color-base: #343434;
 
  // ~16px
 $font-size-large: ceil(($font-size-base * 1.142857));

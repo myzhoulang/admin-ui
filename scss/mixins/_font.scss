@@ -1,0 +1,5 @@
+@mixin text-color($type: base, $color: $font-color-base){
+  .text-#{$type} {
+    color: $color;
+  }
+}

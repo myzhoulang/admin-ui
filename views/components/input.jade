@@ -11,13 +11,18 @@ block content
       .adm-col-12
         .adm-input
           input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
-    
+
     h3 带icon的输入框
     .adm-row
       .adm-col-12
         .adm-input
           i.fa.fa-pencil.fa-lg.adm-input-icon
-          input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
+          input.adm-input-inner(name="user", type="text", placeholder="Icon 默认居左展示的")
+
+      .adm-col-12
+        .adm-input
+          i.fa.fa-location-arrow.fa-lg.adm-input-icon.adm-input-icon-right
+          input.adm-input-inner(name="user", type="text", placeholder="Icon 在右侧的输入框")
 
     h3 文本域
     .adm-row
@@ -27,35 +32,35 @@ block content
 
     h3 复合型输入框
     .adm-row
-      .adm-col-24.m-t-md
+      .adm-col-8.m-t-md
         .adm-input-group
           .adm-input-addon IP
           .adm-input
             input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
-      
-      .adm-col-24.m-t-md
+
+      .adm-col-8.m-t-md
         .adm-input-group
           .adm-input-addon http://
           .adm-input
             input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
           .adm-input-addon .com
 
-      .adm-col-24.m-t-md
+      .adm-col-8.m-t-md
         .adm-input-group
           .adm-input
             input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
-          .adm-input-addon
-            i.fa.fa-search
+          .adm-input-addon.text-center
+            i.fa.fa-lg.fa-warning.text-warning
 
-      
-      
+
+
 
     h3 各个尺寸的输入框
     .adm-row
       .adm-col-6
         .adm-input
           input.adm-input-inner.adm-input-inner-lg(placeholder=".adm-input-inner-lg")
-      
+
       .adm-col-6
         .adm-input
           input.adm-input-inner(placeholder=".adm-input-inner")
@@ -73,26 +78,52 @@ block content
         .adm-input-group
           .adm-input
             input.adm-input-inner.adm-input-inner-lg(name="user", type="text", placeholder="在这里输入用户名")
-          
+
           button.adm-btn.adm-btn-primary.adm-btn-lg 搜索
-      
+
       .adm-col-6.m-t-md
         .adm-input-group
           .adm-input
             input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
-          
+
           button.adm-btn.adm-btn-primary 搜索
-      
+
       .adm-col-6.m-t-md
         .adm-input-group
           .adm-input
             input.adm-input-inner.adm-input-inner-sm(name="user", type="text", placeholder="在这里输入用户名")
-          
+
           button.adm-btn.adm-btn-primary.adm-btn-sm 搜索
 
       .adm-col-6.m-t-md
         .adm-input-group
           .adm-input
             input.adm-input-inner.adm-input-inner-xs(name="user", type="text", placeholder="在这里输入用户名")
-          
+
           button.adm-btn.adm-btn-primary.adm-btn-xs 搜索
+
+
+
+    h3 输入框组
+    .adm-row
+      .adm-col-12
+        .adm-input-group
+          .adm-input
+            input.adm-input-inner.adm-input-inner(name="start", type="text", placeholder="开始")
+
+          div.adm-input-addon.line.text-muted -
+
+          .adm-input
+            input.adm-input-inner.adm-input-inner(name="end", type="text", placeholder="结束")
+
+      .adm-col-12
+        .adm-input-group
+          .adm-input
+            i.fa.fa-clock-o.fa-lg.adm-input-icon.adm-input-icon-right
+            input.adm-input-inner.adm-input-inner(name="dateStart", type="text", placeholder="开始时间")
+
+          div.adm-input-addon.line.text-muted -
+
+          .adm-input
+            i.fa.fa-clock-o.fa-lg.adm-input-icon.adm-input-icon-right
+            input.adm-input-inner.adm-input-inner(name="dateEnd", type="text", placeholder="结束时间")

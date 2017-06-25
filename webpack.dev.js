@@ -1,7 +1,7 @@
 const path = require("path")
 const webpack = require("webpack")
 
-const publicPath = 'http://localhost:3001/'
+const publicPath = 'http://192.168.2.102:3001/'
 const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true'
 
 module.exports = {

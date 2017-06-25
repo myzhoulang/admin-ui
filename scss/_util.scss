@@ -1,0 +1,18 @@
+// 文本颜色
+@include text-color(muted, $muted);
+@include text-color(primary, $primary);
+@include text-color(success, $success);
+@include text-color(info, $info);
+@include text-color(warning, $warning);
+@include text-color(dange, $danger);
+
+// 文本排列样式
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
