@@ -1,10 +1,10 @@
 // input 输入框
+
 .#{$prefix}-input {
   position: relative;
   display: inline-block;
   width: 100%;
   font-size: 12px;
-
   @at-root .#{$prefix}-input-icon {
     position: absolute;
     width: 30px;
@@ -24,17 +24,15 @@
       vertical-align: middle;
     }
 
-    & + .#{$prefix}-input-inner {
+    &+.#{$prefix}-input-inner {
       padding-left: 36px;
     }
-
-
     // icon 在输入框的右侧
-    &.#{$prefix}-input-icon-right{
+    &.#{$prefix}-input-icon-right {
       left: auto;
-      right:0;
+      right: 0;
 
-      & + .#{$prefix}-input-inner {
+      &+.#{$prefix}-input-inner {
         padding-left: 12px;
         padding-right: 30px;
       }
@@ -62,6 +60,18 @@
     &:focus {
       border-color: $border-focus-color;
     }
+
+    // 禁用只读
+    &[disabled],
+    &[readOnly] {
+      background-color: $disabled;
+
+      &:focus,
+      &:active{
+        border-color: $border-color;
+      }
+    }
+
     @include placeholder(lighten($font-color-base, 40%));
 
     &.#{$prefix}-input-inner-lg {
@@ -77,7 +87,6 @@
     }
   }
 }
-
 // textarea 输入框
 .#{$prefix}-textarea {
   @extend .#{$prefix}-input;
@@ -87,7 +96,6 @@
     line-height: $line-height-base;
   }
 }
-
 // 输入框组
 .#{$prefix}-input-group {
   display: table;
@@ -128,14 +136,13 @@
     vertical-align: middle;
   }
 
-  .line{
+  .line {
     @extend .#{$prefix}-input-addon;
     background-color: transparent;
     border: none;
     width: 28px;
   }
 }
-
 // checkbo 和 radio
 @include input-check(checkbox);
 @include input-check(radio);

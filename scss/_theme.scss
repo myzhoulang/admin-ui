@@ -1,114 +1,81 @@
 // 前缀
 $prefix: adm;
-
 //==== 颜色变量
-
 // 灰色基础 用于后面的灰色在此基础上调色
 $gray-base: #000;
-
 // 深灰色
 $gray-darker: lighten($gray-base, 13.5%);
 $gray-dark: lighten($gray-base, 20%); // #333
-
 // 灰色 #888
 $gray: lighten($gray-base, 50%);
-
 $gray-light: lighten($gray-base, 46.7%); // #777
 $gray-lighter: lighten($gray-base, 93.5%); // #eee
-
 // 暗淡柔和灰色
 $muted: #f6f8fa;
-
 // 主色调
 $primary: #1c84c6;
-
 // 成功色
 $success: #1ab394;
-
 // 信息色
 $info: #23c6c8;
-
 // 警告色
 $warning: #f8ac59;
-
 // 危险色
 $danger: #ed5565;
-
-
+// 禁用色
+$disabled: #eceff4;
 // body 背景色
 $body-bg: #fff;
-
 // 默认文本色
 $text-color: $gray-dark;
-
 // 边框色
 $border-color: #e5e6e7;
 $border-focus-color: #1ab394;
-
-
 //=== 响应式布局变量
-
 // 响应式断点值
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
-
 // 每行最多列数
 $grid-columns: 24;
 $grid-gutter-width: 16px;
-
-$container-sm: 720px + $grid-gutter-width;
-$container-md: 940px + $grid-gutter-width;
-$container-lg: 1140px + $grid-gutter-width;
-
+$container-sm: 720px+$grid-gutter-width;
+$container-md: 940px+$grid-gutter-width;
+$container-lg: 1140px+$grid-gutter-width;
 // === 字体
 $font-family-cn: "PingFang SC Microsoft YaHei";
 $font-family-en: "Helvetica Neue Arial";
 $font-size-base: 14px;
 $font-color-base: #343434;
-
- // ~16px
+// ~16px
 $font-size-large: ceil(($font-size-base * 1.142857));
-
- // ~12px
+// ~12px
 $font-size-small: ceil(($font-size-base * 0.85));
-
 // = 30px
 $font-size-h1: floor(($font-size-base * 2.15));
-
 // = 24px
 $font-size-h2: floor(($font-size-base * 1.7));
-
 // = 18px
 $font-size-h3: floor(($font-size-base * 1.25));
-
 // = 16px
 $font-size-h4: floor(($font-size-base * 1.142857));
-
 // = 14px
 $font-size-h5: floor(($font-size-base));
-
 // = 12px
 $font-size-h6: floor(($font-size-base * 0.85));
-
 // 行高
 $line-height-base: 1.428571429;
 $line-height-large: 1.5;
 $line-height-small: 1.3333333;
-
 // 动态计算的行高 字体 *　基础行高
 // = 20px
 $line-height-computed: floor(($font-size-base * $line-height-base));
-
 // === padding
 $padding-xs-vertical:4px;
 $padding-xs-horizontal: 4px;
-
 $padding-small-vertical: 7px;
 $padding-small-horizontal: 9px;
-
 $padding-base-vertical: 10px;
 $padding-base-horizontal: 15px;
-
 $padding-large-vertical: 12px;
 $padding-large-horizontal:20px;

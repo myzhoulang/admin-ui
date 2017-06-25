@@ -1,0 +1,15 @@
+.#{$prefix}-dropdown-toggle{
+  position: relative;
+
+  .#{$prefix}-menu-list{
+    top: 100%;
+    margin: 8px 0;
+    display: none;;
+  }
+
+  &.open{
+    .#{$prefix}-menu-list{
+      display: block;
+    }
+  }
+}

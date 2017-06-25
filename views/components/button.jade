@@ -19,7 +19,12 @@ block content
     h3 禁用状态
     p 按钮不可用状态
     .demo-box
-      .button.adm-btn(disabled) 主要按钮
+      button.adm-btn(disabled) 默认按钮
+      button.adm-btn.adm-btn-primary(disabled) 主要按钮
+      button.adm-btn.adm-btn-success(disabled) 成功按钮
+      button.adm-btn.adm-btn-info(disabled) 信息按钮
+      button.adm-btn.adm-btn-warning(disabled) 警告按钮
+      button.adm-btn.adm-btn-danger(disabled) 错误按钮
 
     h3 鼠标移入显示的线框按钮
     p 线框的按钮用法。hover 显示带颜色的线框按钮
@@ -65,7 +70,7 @@ block content
     h3 按钮组
     p 用于多项选择
     .demo-box
-      .adm-btn-group
+      .adm-btn-group.adm-btn-group-gap
         button.adm-btn.adm-btn-primary
           i.fa.fa-angle-left.fa-lg.icon-left
           | 上一页
@@ -73,7 +78,41 @@ block content
           | 下一页
           i.fa.fa-angle-right.fa-lg.icon-right
 
+    .demo-box
       .adm-btn-group
+        button.adm-btn 1
+        button.adm-btn 2
+        button.adm-btn 3
+        button.adm-btn 4
+        button.adm-btn 5
+
+    .demo-box
+      .adm-btn-group
+        button.adm-btn
+          i.fa.fa-angle-left
+        button.adm-btn 1
+        button.adm-btn 2
+        button.adm-btn 3
+        button.adm-btn 4
+        button.adm-btn
+          i.fa.fa-angle-right
+
+    .demo-box
+      .adm-btn-group
+        button.adm-btn
+          i.fa.fa-angle-left
+
+      .adm-btn-group
+        button.adm-btn  1
+        button.adm-btn  2
+        button.adm-btn  3
+
+      .adm-btn-group
+        button.adm-btn
+          i.fa.fa-angle-right
+
+    .demo-box
+      .adm-btn-group.adm-btn-group-gap
         button.adm-btn.adm-btn-primary
           i.fa.fa-edit.fa-lg
         button.adm-btn.adm-btn-primary
@@ -91,9 +130,177 @@ block content
       button.adm-btn.adm-btn-block.adm-btn-warning btn-block btn-warning
       button.adm-btn.adm-btn-block.adm-btn-danger btn-block btn-danger
 
-  .adm-container
-    .adm-row
-      .adm-col-12
-        .adm-input
-          i.fa.fa-pencil.fa-lg.adm-input-icon
-          input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
+    h3 下拉菜单
+    p 鼠标点击按钮出现的下拉菜单选择
+    .demo-box
+      .adm-btn-group.adm-dropdown-toggle
+        button.adm-btn.adm-btn-primary Dropdown
+          i.fa.fa-angle-down.fa-lg.icon-right
+
+        ul.adm-menu-list
+            li.adm-menu-item
+              i.fa.fa-edit.fa-lg
+              a(href="#") 编辑
+
+            li.adm-menu-item
+              i.fa.fa-refresh.fa-lg
+              a(href="#") 刷新
+
+            li.adm-menu-item
+              i.fa.fa-unlock.fa-lg
+              a(href="#") 解除
+
+            li.adm-menu-item
+              i.fa.fa-thumbs-o-up.fa-lg
+              a(href="#") 点赞
+
+      .adm-btn-group.adm-dropdown-toggle
+        button.adm-btn Dropdown
+          i.fa.fa-angle-down.fa-lg.icon-right
+
+        ul.adm-menu-list
+            li.adm-menu-item
+              i.fa.fa-edit.fa-lg
+              a(href="#") 编辑
+
+            li.adm-menu-item
+              i.fa.fa-refresh.fa-lg
+              a(href="#") 刷新
+
+            li.adm-menu-item
+              i.fa.fa-unlock.fa-lg
+              a(href="#") 解除
+
+            li.adm-menu-item
+              i.fa.fa-thumbs-o-up.fa-lg
+              a(href="#") 点赞
+
+      .adm-btn-group.adm-dropdown-toggle
+        button.adm-btn.adm-btn-success Dropdown
+          i.fa.fa-angle-down.fa-lg.icon-right
+
+        ul.adm-menu-list
+            li.adm-menu-item
+              i.fa.fa-edit.fa-lg
+              a(href="#") 编辑
+
+            li.adm-menu-item
+              i.fa.fa-refresh.fa-lg
+              a(href="#") 刷新
+
+            li.adm-menu-item
+              i.fa.fa-unlock.fa-lg
+              a(href="#") 解除
+
+            li.adm-menu-item
+              i.fa.fa-thumbs-o-up.fa-lg
+              a(href="#") 点赞
+
+      .adm-btn-group.adm-dropdown-toggle
+        button.adm-btn.adm-btn-info Dropdown
+          i.fa.fa-angle-down.fa-lg.icon-right
+
+        ul.adm-menu-list
+          li.adm-menu-item
+            i.fa.fa-edit.fa-lg
+            a(href="#") 编辑
+
+          li.adm-menu-item
+            i.fa.fa-refresh.fa-lg
+            a(href="#") 刷新
+
+          li.adm-menu-item
+            i.fa.fa-unlock.fa-lg
+            a(href="#") 解除
+
+          li.adm-menu-item
+            i.fa.fa-thumbs-o-up.fa-lg
+            a(href="#") 点赞
+
+      .adm-btn-group.adm-dropdown-toggle
+        button.adm-btn.adm-btn-warning Dropdown
+          i.fa.fa-angle-down.fa-lg.icon-right
+
+        ul.adm-menu-list
+          li.adm-menu-item
+            i.fa.fa-edit.fa-lg
+            a(href="#") 编辑
+
+          li.adm-menu-item
+            i.fa.fa-refresh.fa-lg
+            a(href="#") 刷新
+
+          li.adm-menu-item
+            i.fa.fa-unlock.fa-lg
+            a(href="#") 解除
+
+          li.adm-menu-item
+            i.fa.fa-thumbs-o-up.fa-lg
+            a(href="#") 点赞
+
+      .adm-btn-group.adm-dropdown-toggle
+        button.adm-btn.adm-btn-danger Dropdown
+          i.fa.fa-angle-down.fa-lg.icon-right
+
+        ul.adm-menu-list
+          li.adm-menu-item
+            i.fa.fa-edit.fa-lg
+            a(href="#") 编辑
+
+          li.adm-menu-item
+            i.fa.fa-refresh.fa-lg
+            a(href="#") 刷新
+
+          li.adm-menu-item
+            i.fa.fa-unlock.fa-lg
+            a(href="#") 解除
+
+          li.adm-menu-item
+            i.fa.fa-thumbs-o-up.fa-lg
+            a(href="#") 点赞
+
+
+    //- h3 菜单列表
+    //- p 点击出现的菜单列表
+    //-   ul.adm-menu-list
+    //-     li.adm-menu-item
+    //-       i.fa.fa-edit.fa-lg
+    //-       a(href="#") 编辑
+    //-
+    //-     li.adm-menu-item
+    //-       i.fa.fa-refresh.fa-lg
+    //-       a(href="#") 刷新
+    //-
+    //-     li.adm-menu-item
+    //-       i.fa.fa-unlock.fa-lg
+    //-       a(href="#") 解除
+    //-
+    //-     li.adm-menu-item
+    //-       i.fa.fa-thumbs-o-up.fa-lg
+    //-       a(href="#") 点赞
+    //-
+    //-
+    //-     li.adm-separator
+    //-
+    //-     li.adm-menu-item
+    //-       a(href="#") 更多
+    //-
+    //-         i.fa.fa-angle-right.fa-right
+    //-
+    //-         ul.adm-menu-list.adm-menu-sub
+    //-
+    //-           li.adm-menu-item
+    //-             i.fa.fa-cut.fa-lg
+    //-             a(href="#") 剪切
+    //-
+    //-           li.adm-menu-item
+    //-             i.fa.fa-copy.fa-lg
+    //-             a(href="#") 复制
+    //-
+    //-           li.adm-menu-item
+    //-             i.fa.fa-paste.fa-lg
+    //-             a(href="#") 粘贴
+    //-
+    //-     li.adm-menu-item
+    //-       i.fa.fa-sign-out
+    //-       a(href="#") 退出

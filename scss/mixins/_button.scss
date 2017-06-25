@@ -7,6 +7,12 @@
     background-color: lighten($background-color, 7%);
     border-color: lighten($border, 7%);
   }
+
+  &[disabled]:hover,
+  &[readOnly]:hover{
+    background-color: $background-color;
+    border-color: $border;
+  }
 }
 @mixin btn-size($padding-vertical, $padding-horizontal, $font-size, $border-radius:0) {
   padding: $padding-vertical $padding-horizontal;

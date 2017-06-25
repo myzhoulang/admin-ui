@@ -1,0 +1,66 @@
+.#{$prefix}-menu-list{
+  position: absolute;
+  border: 1px solid $border-color;
+  background-color: #fff;
+  padding: 6px 0;
+  width: 100%;
+  min-width: 150px;
+  margin: 8px;
+  list-style-type: none;
+  z-index: 4;
+  left: 0;
+  top: 0;
+
+  &.#{prefix}-menu-sub{
+    left: 100%;
+    top: 0;
+    display: none;
+  }
+
+  // 横线分割器 公用类
+  @at-root .#{$prefix}-separator{
+    margin:5px auto;
+    width: 95%;
+    height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .#{$prefix}-menu-item{
+    padding: 5px 36px;
+    position: relative;
+    cursor: pointer;
+    color: #939fab;
+
+    a{
+      display: block;
+    }
+
+    .fa{
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      left: 10px;
+    }
+
+    .fa-right{
+      right: 10px;
+      left: auto;
+    }
+
+
+    &:hover,
+    &.active{
+      background-color: $primary;
+      color: #fff;
+    }
+
+    &:hover{
+      .#{$prefix}-menu-sub {
+        display: block;
+      }
+    }
+
+    @include user-select(none);
+  }
+}

@@ -23,7 +23,7 @@
   &.disabled,
   &[disabled] {
     cursor: not-allowed;
-    opacity: .5;
+    opacity: .6;
   }
 
   & + .#{$prefix}-btn {
@@ -95,10 +95,23 @@
 
 .#{$prefix}-btn-group {
 
+  display: inline-block;
+  margin-right: 8px;
+
+  // 按钮组 每一个按钮之间有1像素的空白间隙
+  &.#{$prefix}-btn-group-gap{
+    >.#{$prefix}-btn {
+      & + .#{$prefix}-btn{
+        border-left: 1px solid #fff;
+      }
+    }
+  }
+
   > .#{$prefix}-btn {
     margin-left: 0;
+
     & + .#{$prefix}-btn{
-      border-left: 1px solid #fff;
+      border-left: none;
     }
   }
 }
