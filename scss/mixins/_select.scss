@@ -1,0 +1,43 @@
+.#{$prefix}-select{
+  position: relative;
+
+  .#{$prefix}-select-dropdown{
+    @extend .#{$prefix}-menu;
+    opacity: 0;
+    margin-top: 8px;
+    top: 100%;
+    transform: scaleY(0);
+    transition: .3s all ease;
+    transform-origin: center top 0;
+
+    .#{$prefix}-menu-item{
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    li{
+      list-style-type: none;
+    }
+
+    &.open{
+      display: block;
+    }
+  }
+
+  // icon
+  .fa{
+    transition: .3s transform;
+  }
+
+  // 开启显示列表
+  &.open{
+    .#{$prefix}-select-dropdown{
+      opacity: 1;
+      transform: scaleY(1);
+    }
+
+    .fa{
+      transform: rotate(180deg);
+    }
+  }
+}

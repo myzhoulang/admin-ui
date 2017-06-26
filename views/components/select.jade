@@ -1,0 +1,37 @@
+extends ../layout
+block content
+
+  .adm-container
+    h2 Select 选择输入框
+    p 当选项过多时，使用下拉菜单展示并选择内容。
+
+  .adm-container
+    h3 基础用法
+    .adm-row
+      .adm-col-12
+        .adm-select
+          .adm-input
+            input.adm-input-inner(name="user", type="text", placeholder="选择你想要吃的菜")
+            .adm-input-icon.adm-input-icon-right
+              i.fa.fa-caret-down.fa-lg
+          .adm-select-dropdown
+            ul
+              li.adm-menu-group-title 红烧类
+              li.adm-menu-item(disabled="disabled") 红烧鱼
+              li.adm-menu-item 红烧小龙虾
+
+              li.adm-menu-group-title 清蒸类
+              li.adm-menu-item 清蒸螃蟹
+              li.adm-menu-item 清蒸鱼
+  script.
+    var oInput = document.querySelector('.adm-input-inner');
+    var oSelect = document.querySelector('.adm-select');
+    var oSelectDropdown = document.querySelector('.adm-select-dropdown');
+
+    oInput.onfocus = function(event){
+      oSelect.classList.add('open');
+    };
+
+    oInput.onblur = function(event){
+      oSelect.classList.remove('open');
+    };

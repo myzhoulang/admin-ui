@@ -1,0 +1,81 @@
+.#{$prefix}-menu{
+  position: absolute;
+  border: 1px solid $border-color;
+  background-color: #fff;
+  padding: 6px 0;
+  width: 100%;
+  list-style-type: none;
+  z-index: 4;
+  left: 0;
+  top: 0;
+
+  &.#{prefix}-menu-sub{
+    left: 100%;
+    top: 0;
+    display: none;
+  }
+
+  // 横线分割器 公用类
+  @at-root .#{$prefix}-separator{
+    margin:5px auto;
+    width: 95%;
+    height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .#{$prefix}-menu-group-title{
+    padding:5px 10px 0;
+    color: #8e8e8e;
+    font-size: 12px;
+    line-height: 30px;
+  }
+
+  .#{$prefix}-menu-item{
+    padding: 5px 36px;
+    position: relative;
+    cursor: pointer;
+    list-style-type: none;
+    color: #48576a;
+
+    a{
+      display: block;
+    }
+
+    .fa{
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      left: 10px;
+    }
+
+    .fa-right{
+      right: 10px;
+      left: auto;
+    }
+
+
+    &:hover,
+    &.active{
+      background-color: $primary;
+      color: #fff;
+    }
+
+    &:hover{
+      .#{$prefix}-menu-sub {
+        display: block;
+      }
+    }
+
+    &[disabled] {
+      color: lighten(#48576a, 45%);
+      cursor: not-allowed;
+
+      &:hover{
+        background-color: #fff;
+      }
+    }
+
+    @include user-select(none);
+  }
+}
