@@ -1,0 +1,49 @@
+.form-control {
+  width: 100%;
+  // border: {
+  //   width: 1px;
+  //   style: solid;
+  //   color: $border-color;
+  // }
+  line-height: 1;
+  height: 36px;
+  background-color: #fff;
+  background-image: none;
+  border: 0;
+  outline: 1px solid $border-color;
+  display: inline-block;
+  color: inherit;
+  box-sizing: border-box;
+  font-size: inherit;
+  // outline: none;
+  padding: 6px 12px;
+
+
+  &:active,
+  &:focus {
+    border-color: $border-focus-color;
+  }
+  // 禁用只读
+  &[disabled],
+  &[readOnly] {
+    background-color: $disabled;
+
+    &:active,
+    &:focus {
+      border-color: $border-color;
+    }
+  }
+  @include placeholder(lighten($font-color-base, 40%));
+
+  &.#{$prefix}-input-inner-lg {
+    height: 42px;
+  }
+
+  &.#{$prefix}-input-inner-sm {
+    height: 28px;
+  }
+
+  &.#{$prefix}-input-inner-xs {
+    height: 22px;
+  }
+}

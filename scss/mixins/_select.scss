@@ -25,7 +25,7 @@
   }
 
   // icon
-  .fa{
+  .arrow{
     transition: .3s transform;
   }
 
@@ -36,7 +36,7 @@
       transform: scaleY(1);
     }
 
-    .fa{
+    .arrow{
       transform: rotate(180deg);
     }
   }
