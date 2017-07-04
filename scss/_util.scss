@@ -5,20 +5,35 @@
 @include text-color(info, $info);
 @include text-color(warning, $warning);
 @include text-color(dange, $danger);
-
 // 文本排列样式
-.text-left{
+.text-left {
   text-align: left;
 }
-.text-right{
+
+.text-right {
   text-align: right;
 }
-.text-center{
+
+.text-center {
   text-align: center;
 }
+// 文版单行显示超出使用...
 
-.help-blcok{
+.text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+//
+.help-blcok {
   margin-top: 5px;
   display: block;
   color: $muted;
+}
+
+
+// 清除浮动
+.clearfix{
+  @include clearfix();
 }

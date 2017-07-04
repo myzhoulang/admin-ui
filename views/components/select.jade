@@ -13,7 +13,7 @@ block content
           .adm-input
             .adm-input-icon
               i.fa.fa-home.fa-lg
-            input.adm-input-inner(name="age", type="number", placeholder="xxx")
+            input.adm-input-inner(name="age", type="text", placeholder="xxx")
             .adm-select-dropdown
               ul
                 li.adm-menu-group-title 红烧类
@@ -57,9 +57,10 @@ block content
   script.
     var oInput = [...document.querySelectorAll('.adm-input-inner')];
     var oSelect = [...document.querySelectorAll('.adm-select')];
+    var oBtn = document.querySelector('.adm-btn');
 
     oInput.forEach((item, index)=>{
       item.onfocus = () => oSelect[index].classList.add('open');
 
       item.onblur = () => oSelect[index].classList.remove('open');
-    })
+    });

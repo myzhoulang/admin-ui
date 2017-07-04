@@ -1,0 +1,33 @@
+@mixin alert($type, $color) {
+  .#{$prefix}-alert-#{$type} {
+    background-color: lighten($color, 30%);
+    border-color: $color;
+
+    .#{$prefix}-alert-close {
+      color: $color;
+    }
+
+    .#{$prefix}-alert-icon {
+      color: $color;
+    }
+
+    .#{$prefix}-alert-icon-block {
+      color: $color;
+    }
+
+    &.#{$prefix}-alert-fill {
+      background-color: $color;
+      color: #fff;
+
+      .#{$prefix}-alert-close,
+      .#{$prefix}-alert-icon,
+      .#{$prefix}-alert-icon-block {
+        color: inherit;
+      }
+    }
+
+    &.#{$prefix}-alert-no-border {
+      border-color: transparent;
+    }
+  }
+}

@@ -13,11 +13,11 @@ $gray-lighter: lighten($gray-base, 93.5%); // #eee
 // 暗淡柔和灰色
 $muted: #f6f8fa;
 // 主色调
-$primary: #1c84c6;
+$primary: #50bfff;
 // 成功色
-$success: #1ab394;
+$success: #13ce66;
 // 信息色
-$info: #23c6c8;
+$info: #2797ca;
 // 警告色
 $warning: #f8ac59;
 // 危险色
@@ -79,3 +79,7 @@ $padding-base-vertical: 10px;
 $padding-base-horizontal: 15px;
 $padding-large-vertical: 12px;
 $padding-large-horizontal:20px;
+
+// === alert padding
+
+$alert-padding: 8px 30px 8px 16px;

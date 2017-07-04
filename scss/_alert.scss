@@ -1,0 +1,53 @@
+.#{$prefix}-alert {
+  padding: $alert-padding;
+  position: relative;
+  color: $font-color-base;
+  display: table;
+  width: 100%;
+  margin-bottom: 10px;
+  border: {
+    width: 1px;
+    color: transparent;
+    style: solid;
+  }
+
+  .#{$prefix}-alert-close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .#{$prefix}-alert-icon{
+    margin-right: 5px;
+  }
+
+  .#{$prefix}-alert-title{
+    font-size: 16px;
+    margin: 0;
+    font-weight: 700;
+  }
+  .#{$prefix}-alert-desc{
+    margin: 5px 0 0;
+    display: table;
+    width: 100%;
+  }
+
+  .#{$prefix}-alert-icon-block{
+    display: table-cell;
+    padding-right: 1em;
+    vertical-align: middle;
+  }
+
+  .#{$prefix}-alert-text{
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+  }
+}
+@include alert(primary, $primary);
+@include alert(success, $success);
+@include alert(info, $info);
+@include alert(warning, $warning);
+@include alert(danger, $danger);

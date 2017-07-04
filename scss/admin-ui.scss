@@ -1,3 +1,5 @@
+@import "normalize";
+
 @import "theme";
 @import "./mixins/mixin";
 @import "rest";
@@ -12,3 +14,4 @@
 @import "menu";
 
 @import "form";
+@import "alert";
