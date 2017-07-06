@@ -1,0 +1,16 @@
+.#{$prefix}-nav {
+  border: 1px solid $border-color;
+  border-bottom: none;
+  display: table;
+  table-layout: fixed;
+  color: #adb7be;
+  width: 100%;
+
+  .#{$prefix}-nav-link {
+    cursor: pointer;
+  }
+
+  .#{$prefix}-nav-item {
+    text-align: center;
+  }
+}
