@@ -5,7 +5,23 @@ html
     if(env == "production")
       link(rel="stylesheet" href="/stylesheets/admin-ui.style.css")
   body
-    block content
+    .adm-container-fluid
+      .adm-row
+        .adm-col-sm-6
+          ul.adm-nav
+            li
+              a(href="#")
+                i.fa.fa-home
+                span Home
+                i.fa.fa-angle-down
+
+              ul.adm-nav.adm-nav-sub
+                li
+                  a(href="#")
+                    i.fa.fa-book
+                    span Home-first
+        .adm-col-sm-18
+          block content
 
     script(src="/admin-ui.js")
     script(src="/style.js")

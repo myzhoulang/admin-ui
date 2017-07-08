@@ -1,10 +1,29 @@
 .#{$prefix}-nav {
-  border: 1px solid $border-color;
   border-bottom: none;
-  display: table;
-  table-layout: fixed;
-  color: #adb7be;
+  // display: table;
+  // table-layout: fixed;
+  // color: #adb7be;
+  color: $gray;
   width: 100%;
+  font-size: 16px;
+
+  > li {
+    // float: left;
+    list-style: none;
+    width: 100%;
+
+
+    > a {
+      // padding-left: 15px;
+      display: block;
+      padding: 8px 15px;
+
+      &:hover{
+        background: $primary;
+        color: #fff;
+      }
+    }
+  }
 
   .#{$prefix}-nav-link {
     cursor: pointer;
@@ -12,5 +31,16 @@
 
   .#{$prefix}-nav-item {
     text-align: center;
+  }
+}
+
+.#{$prefix}-nav-sub{
+  font-size: 14px;
+  margin: 0;
+
+  >li {
+    >a{
+      padding: 5px 25px 5px 30px;
+    }
   }
 }

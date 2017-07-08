@@ -4,7 +4,8 @@
   .#{$prefix}-menu-list{
     top: 100%;
     margin: 8px 0;
-    display: none;;
+    display: none;
+    min-width: 150px;
   }
 
   &.open{

@@ -1,6 +1,7 @@
 .#{$prefix}-tabs {
   .#{$prefix}-tabs-nav {
     position: relative;
+    border: 1px solid $border-color;
   }
 
   .#{$prefix}-nav-cards {

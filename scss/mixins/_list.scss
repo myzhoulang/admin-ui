@@ -1,0 +1,18 @@
+.#{$prefix}-list {
+  padding: 6px 0;
+  width: 100%;
+  background-color: transparent;
+
+  > li {
+    padding: 5px 36px;
+    position: relative;
+    list-style-type: none;
+    cursor: pointer;
+    color: #48576a;
+    @include user-select(none);
+
+    > a {
+      display: block;
+    }
+  }
+}
