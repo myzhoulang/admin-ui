@@ -1,34 +1,55 @@
-body {}
+@font-face {
+    font-family: "Proxima";
+    src: url('../fonts/Proxima_Nova_Semibold.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Proxima";
+}
+
+.side-menu {
+    border-right: 1px solid #dedede;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+}
+
+.page-content {
+    padding-left: 255px;
+}
 
 .demo-layout {
-  .grid-content {
-    padding: 16px 0;
-    text-align: center;
-    color: #fff;
-    background-color: #1c84c6;
-  }
-
-  .adm-row,
-  .adm-row-normal {
-    margin-bottom: 20px;
-
-    [class]:nth-child(odd) {
-      .grid-content {
-        background-color: lighten(#1c84c6, 10%);
-      }
+    .grid-content {
+        padding: 16px 0;
+        text-align: center;
+        color: #fff;
+        background-color: #1c84c6;
     }
-  }
+    .adm-row,
+    .adm-row-normal {
+        margin-bottom: 20px;
+        [class]:nth-child(odd) {
+            .grid-content {
+                background-color: lighten(#1c84c6, 10%);
+            }
+        }
+    }
 }
 
-.demo-box{
-  .adm-btn{
-    margin-bottom: 8px;
-  }
-  .adm-btn-group{
-    margin-bottom: 20px;
-  }
+.demo-box {
+    .adm-btn {
+        margin-bottom: 8px;
+    }
+    .adm-btn-group {
+        margin-bottom: 20px;
+    }
 }
 
-.m-t-md{
-  margin-top: 15px;
+.m-t-md {
+    margin-top: 15px;
 }

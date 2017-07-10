@@ -1,104 +1,99 @@
 // input 输入框
-
 .#{$prefix}-input {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  font-size: 12px;
-  @at-root .#{$prefix}-input-icon {
-    position: absolute;
-    width: 30px;
-    height: 100%;
-    left: 0;
-    top: 0;
-    text-align: center;
-    color: lighten($font-color-base, 55%);
-    transition: all 0.3s;
-    cursor: pointer;
-
-    &::after {
-      content: "";
-      height: 100%;
-      width: 0;
-      display: inline-block;
-      vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    @at-root .#{$prefix}-input-icon {
+        position: absolute;
+        width: 30px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        color: lighten($font-color-base, 55%);
+        transition: all 0.3s;
+        cursor: pointer;
+        &::after {
+            content: "";
+            height: 100%;
+            width: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &+.#{$prefix}-input-inner {
+            padding-left: 36px;
+        }
+        // icon 在输入框的右侧
+        &.#{$prefix}-input-icon-right {
+            left: auto;
+            right: 0;
+            &+.#{$prefix}-input-inner {
+                padding-left: 12px;
+                padding-right: 30px;
+            }
+        }
     }
-
-    &+.#{$prefix}-input-inner {
-      padding-left: 36px;
+    @at-root .#{$prefix}-input-inner {
+        @extend .form-control;
     }
-    // icon 在输入框的右侧
-    &.#{$prefix}-input-icon-right {
-      left: auto;
-      right: 0;
-
-      &+.#{$prefix}-input-inner {
-        padding-left: 12px;
-        padding-right: 30px;
-      }
-    }
-  }
-
-  @at-root .#{$prefix}-input-inner {
-    @extend .form-control;
-  }
 }
+
 // textarea 输入框
 .#{$prefix}-textarea {
-  @extend .#{$prefix}-input;
-  @at-root .#{$prefix}-textarea-inner {
-     @extend .#{$prefix}-input-inner;
-    height: auto;
-    line-height: $line-height-base;
-  }
+    @extend .#{$prefix}-input;
+    @at-root .#{$prefix}-textarea-inner {
+        @extend .#{$prefix}-input-inner;
+        height: auto;
+        line-height: $line-height-base;
+    }
 }
+
 // 输入框组
 .#{$prefix}-input-group {
-  display: table;
-  width: 100%;
-
-  > .#{$prefix}-input {
-    display: table-cell;
-    vertical-align: middle;
-    width: auto;
-  }
-
-  > .#{$prefix}-input-addon {
-    display: table-cell;
-    padding: 0 10px;
-    min-width: 1px;
-    white-space: nowrap;
-    vertical-align: middle;
-    color: lighten($font-color-base, 25%);
-    background-color: $muted;
-    border: {
-      width: 1px;
-      style: solid;
-      color: $border-color;
+    display: table;
+    width: 100%;
+    >.#{$prefix}-input {
+        display: table-cell;
+        vertical-align: middle;
+        width: auto;
     }
-    height: 100%;
-
-    &:first-child {
-      border-right: none;
+    >.#{$prefix}-input-addon {
+        display: table-cell;
+        padding: 0 10px;
+        min-width: 1px;
+        white-space: nowrap;
+        vertical-align: middle;
+        color: lighten($font-color-base, 25%);
+        background-color: $muted;
+        border: {
+            width: 1px;
+            style: solid;
+            color: $border-color;
+        }
+        height: 100%;
+        &:first-child {
+            border-right: none;
+        }
+        &:last-child {
+            border-left: none;
+        }
     }
-
-    &:last-child {
-      border-left: none;
+    >.#{$prefix}-btn {
+        display: table-cell;
+        vertical-align: middle;
     }
-  }
-
-  > .#{$prefix}-btn {
-    display: table-cell;
-    vertical-align: middle;
-  }
-
-  .line {
-    @extend .#{$prefix}-input-addon;
-    background-color: transparent;
-    border: none;
-    width: 28px;
-  }
+    .line {
+        @extend .#{$prefix}-input-addon;
+        background-color: transparent;
+        border: none;
+        width: 28px;
+    }
 }
+
 // checkbo 和 radio
 @include input-check(checkbox);
 @include input-check(radio);
+// 按钮式checkbox组 和 radio组
+@include btn-check-group(checkbox);
+@include btn-check-group(radio);

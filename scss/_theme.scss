@@ -43,8 +43,9 @@ $container-sm: 720px+$grid-gutter-width;
 $container-md: 940px+$grid-gutter-width;
 $container-lg: 1140px+$grid-gutter-width;
 // === 字体
-$font-family-cn: "PingFang SC Microsoft YaHei";
-$font-family-en: "Helvetica Neue Arial";
+$font-family-cn: "PingFang SC, Microsoft YaHei";
+$font-family-en: "PT Mono, Helvetica Neue, Arial";
+$font-family-base: quote($font-family-en + ',' + $font-family-cn);
 $font-size-base: 14px;
 $font-color-base: #343434;
 // ~16px

@@ -1,55 +1,47 @@
 .#{$prefix}-tabs {
-  .#{$prefix}-tabs-nav {
-    position: relative;
-    border: 1px solid $border-color;
-  }
-
-  .#{$prefix}-nav-cards {
-    position: relative;
-
-    .#{$prefix}-nav-link {
-      cursor: pointer;
+    .#{$prefix}-tabs-nav {
+        position: relative;
+        border: 1px solid $border-color;
     }
-
-    .#{$prefix}-nav-item {
-      background-color: #f6f8fa;
-      padding: 10px 20px;
-      display: table-cell;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      border-bottom: 1px solid $border-color;
+    .#{$prefix}-nav-cards {
+        position: relative;
+        .#{$prefix}-nav-link {
+            cursor: pointer;
+        }
+        .#{$prefix}-nav-item {
+            background-color: #f6f8fa;
+            padding: 10px 20px;
+            display: table-cell;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-bottom: 1px solid $border-color;
+        }
+        .#{$prefix}-nav-item-active {
+            color: $primary;
+            border-bottom-color: #fff;
+            background-color: #fff;
+        }
     }
-
-    .#{$prefix}-nav-item-active {
-      color: $primary;
-      border-bottom-color: #fff;
-      background-color: #fff;
+    .#{$prefix}-nav-active-bar {
+        width: 167px;
+        position: absolute;
+        border: 2px solid $primary;
+        top: 0;
+        left: 167px;
+        z-index: 2;
     }
-  }
-
-  .#{$prefix}-nav-active-bar {
-    width: 167px;
-    position: absolute;
-    border: 2px solid $primary;
-    top: 0;
-    left: 167px;
-    z-index: 2;
-  }
-
-  .#{$prefix}-nav-icons-block {
-    .#{$prefix}-nav-item {
-      padding: 5px 20px;
+    .#{$prefix}-nav-icons-block {
+        .#{$prefix}-nav-item {
+            padding: 5px 20px;
+        }
+        .fa {
+            display: block;
+        }
     }
-
-    .fa {
-      display: block;
+    .#{$prefix}-nav-inline {
+        li {
+            float: left;
+        }
     }
-  }
-
-  .#{$prefix}-nav-inline {
-    li {
-      float: left;
-    }
-  }
 }

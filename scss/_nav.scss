@@ -1,46 +1,57 @@
 .#{$prefix}-nav {
-  border-bottom: none;
-  // display: table;
-  // table-layout: fixed;
-  // color: #adb7be;
-  color: $gray;
-  width: 100%;
-  font-size: 16px;
-
-  > li {
-    // float: left;
-    list-style: none;
+    border-bottom: none;
     width: 100%;
-
-
-    > a {
-      // padding-left: 15px;
-      display: block;
-      padding: 8px 15px;
-
-      &:hover{
-        background: $primary;
-        color: #fff;
-      }
+    font-size: 16px;
+    position: relative;
+    color: $gray;
+    >li.active {
+        &:before {
+            content: "";
+            width: 4px;
+            height: 100%;
+            background: $danger;
+            z-index: 5;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     }
-  }
-
-  .#{$prefix}-nav-link {
-    cursor: pointer;
-  }
-
-  .#{$prefix}-nav-item {
-    text-align: center;
-  }
+    li {
+        position: relative;
+        list-style: none;
+        width: 100%;
+        &.active {
+            color: $font-color-base;
+            .#{$prefix}-nav-sub {
+                display: block;
+                color: $gray;
+            }
+        }
+        >a {
+            position: relative;
+            display: block;
+            padding: 8px 15px 8px 20px;
+            &:hover {
+                background: lighten($primary, 31%);
+                color: darken($font-color-base, 20%);
+            }
+        }
+        .action {
+            position: absolute;
+            right: 21px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .#{$prefix}-nav-link {
+        cursor: pointer;
+    }
+    .#{$prefix}-nav-item {
+        text-align: center;
+    }
 }
 
-.#{$prefix}-nav-sub{
-  font-size: 14px;
-  margin: 0;
-
-  >li {
-    >a{
-      padding: 5px 25px 5px 30px;
-    }
-  }
+.#{$prefix}-nav-sub {
+    margin: 0;
+    display: none;
 }

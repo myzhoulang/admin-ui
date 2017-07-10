@@ -6,51 +6,75 @@ html
       link(rel="stylesheet" href="/stylesheets/admin-ui.style.css")
   body
     .adm-container-fluid
-      .adm-row
-        .adm-col-sm-6
+      .table-layout
+        nav.side-menu
           ul.adm-nav
-            li
+            li.active
               a(href="#")
-                i.fa.fa-home
-                span Home
+                i.fa.fa-dashboard.text-success
+                span Dashboard
                 i.fa.fa-angle-down.action
 
-              ul.adm-nav.adm-nav-sub
+              ul.adm-nav-sub
                 li
                   a(href="#")
-                    i.fa.fa-book
                     span Home-first
                 li
                   a(href="#")
-                    i.fa.fa-book
                     span Home-second
 
                 li
                   a(href="#")
-                    i.fa.fa-book
                     span Home-third
 
-            li
+            li.active
               a(href="#")
-                i.fa.fa-home
+                i.fa.fa-puzzle-piece
                 span Form
-                i.fa.fa-angle-down.action
+                i.fa.fa-angle-right.action
 
-              ul.adm-nav.adm-nav-sub
+              ul.adm-nav-sub
                 li
-                  a(href="#")
-                    i.fa.fa-book
-                    span Form-first
+                  a(href="/components/input")
+                    span basic inputs
                 li
-                  a(href="#")
-                    i.fa.fa-book
-                    span Form-second
+                  a(href="/components/button")
+                    span buttons
 
                 li
+                  a(href="/components/select")
+                    span select & tags
+
+                li
+                  a(href="/components/checkbox")
+                    span checkboxes & radios
+
+                li
                   a(href="#")
-                    i.fa.fa-book
-                    span Form-third
-        .adm-col-sm-18
+                    span validation
+
+                li
+                  a(href="#")
+                    span steps
+
+                li
+                  a(href="#")
+                    span input-mask
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .page-content
           block content
 
     script(src="/admin-ui.js")

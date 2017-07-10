@@ -12,35 +12,51 @@ block content
           span.adm-checkbox-inner
           | 上海
 
-        label.adm-checkbox
-          input(type="checkbox", name="a")
-          span.adm-checkbox-inner
-          | 北京
-        label.adm-checkbox
-          input(type="checkbox", name="a")
-          span.adm-checkbox-inner
-          | 杭州
+      .adm-col-12
+        label.adm-radio
+          input(type="radio", name="a")
+          span.adm-radio-inner
+          | 爬山
 
-      .adm-row
-        .adm-col-12
-          label.adm-radio
-            input(type="radio", name="a")
-            span.adm-radio-inner
-            | 爬山
+    h3 checkbox 和 radio 组
+    .adm-row
+      .adm-col-12
+        .adm-checkbox-group
+          label.adm-checkbox
+            input(type="checkbox",name="a1")
+            span.adm-checkbox-inner
+            | 上海
 
-          label.adm-radio
-            input(type="radio", name="a")
-            span.adm-radio-inner
-            | 看书
+          label.adm-checkbox
+            input(type="checkbox", checked="checked",name="a1")
+            span.adm-checkbox-inner
+            | 北京
+          label.adm-checkbox
+            input(type="checkbox",name="a1")
+            span.adm-checkbox-inner
+            | 杭州
 
-          label.adm-radio
-            input(type="radio", name="a")
-            span.adm-radio-inner
-            | 打篮球
+      .adm-col-12
+          .adm-radio-group
+            label.adm-radio
+              input(type="radio", name="c1", checked="checked")
+              span.adm-radio-inner
+              | 爬山
 
-      h3 基础用法
-      .adm-row
-        .adm-col-12
+            label.adm-radio
+              input(type="radio", name="c1")
+              span.adm-radio-inner
+              | 看书
+
+            label.adm-radio
+              input(type="radio", name="c1")
+              span.adm-radio-inner
+              | 打篮球
+
+    h3 禁用的checkbox 和 radio
+    .adm-row
+      .adm-col-12
+        .adm-checkbox-group
           label.adm-checkbox
             input(type="checkbox",  disabled="disabled")
             span.adm-checkbox-inner
@@ -55,8 +71,8 @@ block content
             span.adm-checkbox-inner
             | 杭州
 
-        .adm-row
-          .adm-col-12
+      .adm-col-12
+          .adm-radio-group
             label.adm-radio
               input(type="radio", name="c", checked="checked", disabled="disabled")
               span.adm-radio-inner
@@ -71,80 +87,36 @@ block content
               input(type="radio", name="c", disabled="disabled")
               span.adm-radio-inner
               | 打篮球
-    h3 文本域
+
+    h3 按钮式checkbox和radio 组
     .adm-row
       .adm-col-12
-        .adm-textarea
-          textarea.adm-textarea-inner(name="desp", placeholder="大段文本输入在这里")
+        .adm-checkbox-group
+          label.adm-checkbox-btn
+            input(type="checkbox", name="a", checked)
+            span.inner 杭州
+          label.adm-checkbox-btn
+            input(type="checkbox", name="a", checked)
+            span.inner 上海
+          label.adm-checkbox-btn
+            input(type="checkbox", name="a")
+            span.inner 北京
+          label.adm-checkbox-btn
+            input(type="checkbox", name="a")
+            span.inner 深圳
 
-    h3 复合型输入框
-    .adm-row
-      .adm-col-24.m-t-md
-        .adm-input-group
-          .adm-input-addon IP
-          .adm-input
-            input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
+      .adm-col-12
+        .adm-radio-group
+          label.adm-radio-btn
+            input(type="radio", name="b")
+            span.inner 杭州
+          label.adm-radio-btn
+            input(type="radio", name="b", checked)
+            span.inner 上海
+          label.adm-radio-btn
+            input(type="radio", name="b")
+            span.inner 北京
+          label.adm-radio-btn
+            input(type="radio", name="b")
+            span.inner 深圳
 
-      .adm-col-24.m-t-md
-        .adm-input-group
-          .adm-input-addon http://
-          .adm-input
-            input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
-          .adm-input-addon .com
-
-      .adm-col-24.m-t-md
-        .adm-input-group
-          .adm-input
-            input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
-          .adm-input-addon
-            i.fa.fa-search
-
-
-
-
-    h3 各个尺寸的输入框
-    .adm-row
-      .adm-col-6
-        .adm-input
-          input.adm-input-inner.adm-input-inner-lg(placeholder=".adm-input-inner-lg")
-
-      .adm-col-6
-        .adm-input
-          input.adm-input-inner(placeholder=".adm-input-inner")
-
-      .adm-col-6
-        .adm-input
-          input.adm-input-inner.adm-input-inner-sm(placeholder=".adm-input-inner-sm")
-
-      .adm-col-6
-        .adm-input
-          input.adm-input-inner.adm-input-inner-xs(placeholder=".adm-input-inner-xs")
-
-    .adm-row
-      .adm-col-6.m-t-md
-        .adm-input-group
-          .adm-input
-            input.adm-input-inner.adm-input-inner-lg(name="user", type="text", placeholder="在这里输入用户名")
-
-          button.adm-btn.adm-btn-primary.adm-btn-lg 搜索
-
-      .adm-col-6.m-t-md
-        .adm-input-group
-          .adm-input
-            input.adm-input-inner(name="user", type="text", placeholder="在这里输入用户名")
-
-          button.adm-btn.adm-btn-primary 搜索
-
-      .adm-col-6.m-t-md
-        .adm-input-group
-          .adm-input
-            input.adm-input-inner.adm-input-inner-sm(name="user", type="text", placeholder="在这里输入用户名")
-
-          button.adm-btn.adm-btn-primary.adm-btn-sm 搜索
-
-      .adm-col-6.m-t-md
-        .adm-input-group
-          .adm-input
-            input.adm-input-inner.adm-input-inner-xs(name="user", type="text", placeholder="在这里输入用户名")
-
-          button.adm-btn.adm-btn-primary.adm-btn-xs 搜索
